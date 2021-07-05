@@ -6,14 +6,42 @@ import requests
 from .errors import ExpandingError, InvalidURL
 
 URL_REGEX = re.compile(
-    r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]"
-    r"[a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)"
-    r"))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()"
+    r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]'
+    r'[a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)'
+    r'))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()'
     r'\[\]{};:\'".,<>?«»“”‘’]))'
 )
 
 
 class ShortyBase:
+    """ShortyBase - the base class for all subclass-shorteners.
+
+    There is an idea of making a class per one popular URL-shortening service.
+
+    Parameters
+    ----------
+    timeout : float, optional
+        The timeout amount for the library to wait.
+    verify : bool, optional
+        Whether to make an SSL verification.
+    proxies : dict, optional
+        Web-proxy configuration for making requests.
+    cert : optional
+        The custom client-side certificate.
+
+    Example
+    -------
+    >>> class MyShortener(ShortyBase):
+    ...     def short(self, url: str) -> str:
+    ...         response = self.get(
+    ...            'http://api.formyshortener.xyz/v69',
+    ...            params={'url': self.sanitize_url(url)}
+    ...        )
+    ...        if response.ok:
+    ...            return response.text.strip()
+    ...        raise ShorteningError(response.content)
+    """
+
     def __init__(self, **kwargs: Any) -> None:
         self.timeout = kwargs.pop('timeout', 5.0)
         self.verify = kwargs.pop('verify', True)
@@ -22,6 +50,23 @@ class ShortyBase:
 
     @staticmethod
     def sanitize_url(url: str) -> str:
+        """The method that discovers a URL beforehand through regular expression.
+
+        Parameters
+        ----------
+        url : str
+            A URL to clear up.
+
+        Returns
+        -------
+        str
+            The sanitized URL.
+
+        Raises
+        ------
+        InvalidURL
+            If the URL fails the regular expression check.
+        """
         if not url.startswith(('http://', 'https://')):
             url = 'http://' + url
 
@@ -36,6 +81,22 @@ class ShortyBase:
         params: Dict[str, Any] = None,
         headers: Dict[str, Any] = None
     ) -> requests.Response:
+        """The get method which is just `requests.get` with extra kwargs passed in.
+
+        Parameters
+        ----------
+        url : str
+            A URL that should be shortened.
+        params : Dict[str, Any], optional
+            A dictionary of parameters to pass in, by default None
+        headers : Dict[str, Any], optional
+            A dictionary of headers to pass in, by default None
+
+        Returns
+        -------
+        requests.Response
+            A response object we use in the shortening process.
+        """
         return requests.get(
             url=self.sanitize_url(url),
             params=params,
@@ -54,6 +115,26 @@ class ShortyBase:
         params: Dict[str, Any] = None,
         headers: Dict[str, Any] = None
     ) -> requests.Response:
+        """The post method which is just `requests.post` with extra kwargs passed in.
+
+        Parameters
+        ----------
+        url : str
+            A URL that should be shortened.
+        data : Dict[str, str], optional
+            The data to pass in manually, by default None
+        json : Dict[str, Any], optional
+            JSON data to send in the body of the request, by default None
+        params : Dict[str, Any], optional
+            A dictionary of parameters to pass in, by default None
+        headers : Dict[str, Any], optional
+            A dictionary of headers to pass in, by default None
+
+        Returns
+        -------
+        requests.Response
+            A response object we use in the shortening process.
+        """
         return requests.post(
             url=self.sanitize_url(url),
             data=data,
@@ -66,12 +147,30 @@ class ShortyBase:
             cert=self.cert,
         )
 
-    def short(self, url: str) -> str:
+    def shorten(self, url: str) -> str:
+        """The key-method that must be overridden by child classes."""
         raise NotImplementedError
 
     def expand(self, url: str) -> str:
-        response = self.get(self.sanitize_url(url))
-        if response.ok:
-            return response.url
+        """Expand a URL using specific services.
+
+        Parameters
+        ----------
+        url : str
+            A URL to shorten.
+
+        Returns
+        -------
+        str
+            The expanded URL.
+
+        Raises
+        ------
+        ExpandingError
+            If the URL fails on expanding.
+        """
+        resp = self.get(self.sanitize_url(url))
+        if resp.ok:
+            return resp.url
 
         raise ExpandingError(url)
