@@ -4,7 +4,7 @@ from ..base import ShortyBase
 from ..errors import ShorteningError
 
 
-class Git(ShortyBase):
+class Shortener(ShortyBase):
     """Git.io URL shortener.
 
     Notice that this works only for `GitHub` URLs.
@@ -13,7 +13,7 @@ class Git(ShortyBase):
     """
 
     def shorten(self, url: str, *, custom_code: Optional[str] = None) -> str:
-        """`Git.shorten` function. Works only with GitHub URLs.
+        """Works only with GitHub URLs.
 
         Parameters
         ----------

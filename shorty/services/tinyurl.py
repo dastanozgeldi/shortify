@@ -2,14 +2,14 @@ from ..base import ShortyBase
 from ..errors import ShorteningError
 
 
-class TinyURL(ShortyBase):
-    """TinyURL.com URL shortener.
+class Shortener(ShortyBase):
+    """TinyURL shortener.
 
     This class inherits from `shorty.base.ShortyBase`.
     """
 
     def shorten(self, url: str) -> str:
-        """`TinyURL.shorten` function.
+        """Shorten function.
 
         Parameters
         ----------

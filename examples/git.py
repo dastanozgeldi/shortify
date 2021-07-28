@@ -1,4 +1,4 @@
-from shorty.services import Git
+from shorty.services.git import Shortener
 
 
 def main():
@@ -6,8 +6,8 @@ def main():
 
     This is the core method that does the user-terminal stuff.
     """
-    g = Git()
-    url = g.shorten('https://www.github.com/Dositan/passman', custom_code='passman')
+    sh = Shortener()
+    url = sh.shorten('https://www.github.com/Dositan/passman', custom_code='passman')
     print(url)
 
 

@@ -1,4 +1,4 @@
-from shorty.services import TinyURL
+from shorty.services.tinyurl import Shortener
 
 
 def main():
@@ -6,8 +6,8 @@ def main():
 
     This is the core method that does the user-terminal stuff.
     """
-    t = TinyURL()
-    url = t.shorten('http://www.github.com/Dositan/Boribay')
+    sh = Shortener()
+    url = sh.shorten('http://www.github.com/Dositan/Boribay')
     print(url)
 
 

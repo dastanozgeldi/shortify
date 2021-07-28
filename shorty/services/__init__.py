@@ -1,2 +1,2 @@
-from .git import Git
-from .tinyurl import TinyURL
+from .git import Shortener
+from .tinyurl import Shortener
