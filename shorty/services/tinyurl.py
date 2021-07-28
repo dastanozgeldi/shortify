@@ -5,7 +5,7 @@ from ..errors import ShorteningError
 class TinyURL(ShortyBase):
     def shorten(self, url: str) -> str:
         response = self.get(
-            'http://tinyurl.com/api-create.php',
+            'https://tinyurl.com/api-create.php',
             params={'url': self.sanitize_url(url)}
         )
         if response.ok:
