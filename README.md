@@ -7,6 +7,9 @@ A simple URL shortening API wrapper library written in Python by Dositan.
 ## Supported services
 1. [TinyURL](https://tinyurl.com)
 2. [Git.io](https://git.io)
+3. [Shrtco.de](https://shrtco.de)
+4. [Is.gd](is.gd)
+5. [Clck.ru](clck.ru)
 
 -----
 
