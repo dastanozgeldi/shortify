@@ -7,5 +7,5 @@ There are several services supported, so if you find one not suiting for your
 purposes, you can always use another API.
 """
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __author__ = 'Dastan Ozgeldi'
