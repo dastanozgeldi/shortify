@@ -7,7 +7,7 @@ def get_arguments() -> argparse.Namespace:
 
     Later on we use this feature in `main` function, the core of the CLI.
     """
-    choices = ('tinyurl', 'git',)
+    choices = ('tinyurl', 'git', 'shrtcode', 'isgd', 'clck',)
     parser = argparse.ArgumentParser('shorty', description='Shorty CLI!')
     parser.add_argument(
         'service',
@@ -17,7 +17,7 @@ def get_arguments() -> argparse.Namespace:
     )
     parser.add_argument(
         'url',
-        help='Pass an URL to parse.'
+        help='Pass an URL to shorten.'
     )
 
     return parser.parse_args()

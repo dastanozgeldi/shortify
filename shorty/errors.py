@@ -1,4 +1,7 @@
 
+__all__ = ('InvalidURL', 'ShorteningError', 'ExpandingError',)
+
+
 class ShortyError(Exception):
     """The base class for all Shorty exceptions.
 
