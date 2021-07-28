@@ -5,6 +5,8 @@ import requests
 
 from .errors import ExpandingError, InvalidURL
 
+__all__ = ('ShortyBase',)
+
 URL_REGEX = re.compile(
     r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]'
     r'[a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)'
@@ -43,7 +45,7 @@ class ShortyBase:
     """
 
     def __init__(self, **kwargs: Any) -> None:
-        self.timeout = kwargs.pop('timeout', 5.0)
+        self.timeout = kwargs.pop('timeout', 30.0)
         self.verify = kwargs.pop('verify', True)
         self.proxies = kwargs.pop('proxies', {})
         self.cert = kwargs.pop('cert', None)
