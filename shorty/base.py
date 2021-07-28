@@ -69,7 +69,6 @@ class ShortyBase:
         """
         if not url.startswith(('http://', 'https://')):
             url = 'http://' + url
-
         if not URL_REGEX.match(url):
             raise InvalidURL(url)
 
