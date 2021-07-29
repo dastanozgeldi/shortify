@@ -1,11 +1,11 @@
-from ..base import ShortyBase
+from ..base import ShortifyBase
 from ..errors import ShorteningError
 
 
-class Shortener(ShortyBase):
-    """Shrtco.de shortener.
+class Shortener(ShortifyBase):
+    """TinyURL shortener.
 
-    This class inherits from `shorty.base.ShortyBase`.
+    This class inherits from `shortify.base.ShortifyBase`.
     """
 
     def shorten(self, url: str) -> str:
@@ -26,14 +26,11 @@ class Shortener(ShortyBase):
         ShorteningError
             If the response status was not around 200 (not ok).
         """
-        print('This API may work slow, please consider waiting!\n')
-
         response = self.get(
-            'https://api.shrtco.de/v2/shorten',
-            params={'url': url}
+            'https://tinyurl.com/api-create.php',
+            params={'url': self.sanitize_url(url)}
         )
         if response.ok:
-            result = response.json()['result']
-            return '\n'.join(result[res] for res in result if res.startswith('full_short_link'))
+            return response.text.strip()
 
         raise ShorteningError(response.content)

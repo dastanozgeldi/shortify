@@ -5,7 +5,7 @@ import requests
 
 from .errors import ExpandingError, InvalidURL
 
-__all__ = ('ShortyBase',)
+__all__ = ('ShortifyBase',)
 
 URL_REGEX = re.compile(
     r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]'
@@ -15,8 +15,8 @@ URL_REGEX = re.compile(
 )
 
 
-class ShortyBase:
-    """ShortyBase - the base class for all subclass-shorteners.
+class ShortifyBase:
+    """ShortifyBase - the base class for all subclass-shorteners.
 
     There is an idea of making a class per one popular URL-shortening service.
 
@@ -33,7 +33,7 @@ class ShortyBase:
 
     Example
     -------
-    >>> class MyShortener(ShortyBase):
+    >>> class MyShortener(ShortifyBase):
     ...     def short(self, url: str) -> str:
     ...         response = self.get(
     ...            'http://api.formyshortener.xyz/v69',

@@ -1,11 +1,11 @@
-from ..base import ShortyBase
+from ..base import ShortifyBase
 from ..errors import ShorteningError
 
 
-class Shortener(ShortyBase):
+class Shortener(ShortifyBase):
     """Is.gd shortener.
 
-    This class inherits from `shorty.base.ShortyBase`.
+    This class inherits from `shortify.base.ShortifyBase`.
     """
 
     def shorten(self, url: str) -> str:

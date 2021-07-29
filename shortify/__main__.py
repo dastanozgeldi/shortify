@@ -3,12 +3,12 @@ import importlib
 
 
 def get_arguments() -> argparse.Namespace:
-    """`shorty.get_arguments` function, the place where all set args get passed.
+    """`shortify.get_arguments` function, the place where all set args get passed.
 
     Later on we use this feature in `main` function, the core of the CLI.
     """
     choices = ('tinyurl', 'git', 'shrtcode', 'isgd', 'clck',)
-    parser = argparse.ArgumentParser('shorty', description='Shorty CLI!')
+    parser = argparse.ArgumentParser('shortify', description='Shortify CLI!')
     parser.add_argument(
         'service',
         default='tinyurl',
@@ -24,14 +24,14 @@ def get_arguments() -> argparse.Namespace:
 
 
 def main() -> None:
-    """The core of Shorty CLI.
+    """The core of Shortify CLI.
 
     Here we handle all positional arguments the user provides.
 
     Then we shorenize the URL according to the parsed arguments.
     """
     args = get_arguments()
-    module = importlib.import_module('shorty.services.' + args.service)
+    module = importlib.import_module('shortify.services.' + args.service)
     service = module.Shortener()
     print(service.shorten(args.url))
 

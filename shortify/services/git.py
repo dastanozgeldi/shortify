@@ -1,15 +1,15 @@
 from typing import Optional
 
-from ..base import ShortyBase
+from ..base import ShortifyBase
 from ..errors import ShorteningError
 
 
-class Shortener(ShortyBase):
+class Shortener(ShortifyBase):
     """Git.io URL shortener.
 
     Notice that this works only for `GitHub` URLs.
 
-    This class inherits from `shorty.base.ShortyBase`.
+    This class inherits from `shortify.base.ShortifyBase`.
     """
 
     def shorten(self, url: str, *, custom_code: Optional[str] = None) -> str:
@@ -20,7 +20,7 @@ class Shortener(ShortyBase):
         url : str
             The URL you need to shorten.
         custom_code : Optional[str], optional
-            Custom permalink code (e.g shorty), by default None
+            Custom permalink code (e.g shortify), by default None
 
         Returns
         -------

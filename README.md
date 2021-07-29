@@ -1,5 +1,5 @@
 <h1 align="center">
-    Shorty - shorten your URL
+    Shortify - shorten your URL
 </h1>
 
 A simple URL shortening API wrapper library written in Python by Dositan.
@@ -27,20 +27,20 @@ After pressing enter, pip will install all the required packages for the project
 -----
 
 ## CLI usage
-Like all CLIs, `shorty` supports `--help` flag.
+Like all CLIs, `shortify` supports `--help` flag.
 ```console
-$ shorty --help
+$ shortify --help
 
-usage: shorty [-h] {tinyurl,git} url
+usage: shortify [-h] {tinyurl,git} url
 
-Shorty CLI!
+Shortify CLI!
 
 .....
 ```
 
 Generating a shortened URL using git.io:
 ```console
-$ shorty git https://www.github.com/Dositan/Boribay/
+$ shortify git https://www.github.com/Dositan/Boribay/
 
 https://git.io/JBsPu
 ```

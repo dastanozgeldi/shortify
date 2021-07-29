@@ -1,8 +1,8 @@
-from shorty.services.tinyurl import Shortener
+from shortify.services.tinyurl import Shortener
 
 
 def main():
-    """Imagine this is a CLI you are using Shorty in.
+    """Imagine this is a CLI you are using Shortify in.
 
     This is the core method that does the user-terminal stuff.
     """

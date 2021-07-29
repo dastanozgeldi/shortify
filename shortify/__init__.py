@@ -1,5 +1,5 @@
 """
-Shorty
+Shortify
 ======
 A library created for users who quickly want to short their really-long-urls up.
 
