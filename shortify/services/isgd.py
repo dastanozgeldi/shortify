@@ -1,5 +1,5 @@
-from ..base import ShortifyBase
-from ..errors import ShorteningError
+from ..abc import ShortifyBase
+from ..exceptions import ShorteningError
 
 
 class Shortener(ShortifyBase):
