@@ -35,12 +35,15 @@ class ShortifyBase:
     -------
     >>> class MyShortener(ShortifyBase):
     ...     def short(self, url: str) -> str:
+    ...         # shortener code may differ from the example below,
+    ...         # this is API-specific.
     ...         response = self.get(
     ...            'http://api.formyshortener.xyz/v69',
     ...            params={'url': self.sanitize_url(url)}
     ...        )
     ...        if response.ok:
     ...            return response.text.strip()
+    ...        # Response status is not ok (does not equal 200).
     ...        raise ShorteningError(response.content)
     """
 
