@@ -3,7 +3,7 @@ from typing import Any, Dict
 
 import requests
 
-from .errors import ExpandingError, InvalidURL
+from .exceptions import ExpandingError, InvalidURL
 
 __all__ = ('ShortifyBase',)
 
