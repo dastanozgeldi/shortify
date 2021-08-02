@@ -8,6 +8,7 @@ def main():
     """
     sh = Shortener()
     url = sh.shorten('https://www.github.com/Dositan/passman', custom_code='passman')
+    # As you can see, specific APIs may have some extra parameters.
     print(url)
 
 

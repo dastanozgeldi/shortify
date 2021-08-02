@@ -7,7 +7,7 @@ def main():
     This is the core method that does the user-terminal stuff.
     """
     sh = Shortener()
-    url = sh.shorten('http://www.github.com/Dositan/passman')
+    url = sh.shorten('http://www.github.com/Dositan/shortify')
     print(url)
 
 
