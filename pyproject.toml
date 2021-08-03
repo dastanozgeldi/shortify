@@ -1,7 +1,7 @@
 # Poetry configuration.
 [tool.poetry]
 name = "shortify"
-version = "0.5.0a"
+version = "0.5.0"
 description = "A simple URL-shortening library with CLI support."
 authors = ["Dastan Ozgeldi <ozgdastan@gmail.com>"]
 readme = "README.md"
