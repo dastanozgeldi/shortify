@@ -13,7 +13,7 @@ __title__ = 'shortify'
 __author__ = 'Dositan'
 __license__ = 'MIT'
 __copyright__ = f'Copyright 2021 {__author__}'
-__version__ = '0.4.5'
+__version__ = '0.5.0a'
 
 
 class VersionInfo(NamedTuple):
@@ -24,6 +24,6 @@ class VersionInfo(NamedTuple):
     serial: int
 
 
-version_info = VersionInfo(major=0, minor=4, micro=5, releaselevel='alpha', serial=0)
+version_info = VersionInfo(major=0, minor=5, micro=0, releaselevel='alpha', serial=0)
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
