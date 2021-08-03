@@ -6,12 +6,12 @@ import requests
 
 from .exceptions import ExpandingError, InvalidURL
 
-__all__ = ('ShortifyBase',)
+__all__ = ("ShortifyBase",)
 
 URL_REGEX = re.compile(
-    r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]'
-    r'[a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)'
-    r'))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()'
+    r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.]"
+    r"[a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)"
+    r"))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()"
     r'\[\]{};:\'".,<>?«»“”‘’]))'
 )
 
@@ -49,10 +49,10 @@ class ShortifyBase(abc.ABC):
     """
 
     def __init__(self, **kwargs: Any) -> None:
-        self.timeout = kwargs.pop('timeout', 60.0)
-        self.verify = kwargs.pop('verify', True)
-        self.proxies = kwargs.pop('proxies', {})
-        self.cert = kwargs.pop('cert', None)
+        self.timeout = kwargs.pop("timeout", 60.0)
+        self.verify = kwargs.pop("verify", True)
+        self.proxies = kwargs.pop("proxies", {})
+        self.cert = kwargs.pop("cert", None)
 
     @staticmethod
     def sanitize_url(url: str) -> str:
@@ -73,18 +73,15 @@ class ShortifyBase(abc.ABC):
         InvalidURL
             If the URL fails the regular expression check.
         """
-        if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+        if not url.startswith(("http://", "https://")):
+            url = "http://" + url
         if not URL_REGEX.match(url):
             raise InvalidURL(url)
 
         return url
 
     def get(
-        self,
-        url: str,
-        params: Dict[str, Any] = None,
-        headers: Dict[str, Any] = None
+        self, url: str, params: Dict[str, Any] = None, headers: Dict[str, Any] = None
     ) -> requests.Response:
         """The get method which is just `requests.get` with extra kwargs passed in.
 
@@ -118,7 +115,7 @@ class ShortifyBase(abc.ABC):
         data: Dict[str, str] = None,
         json: Dict[str, Any] = None,
         params: Dict[str, Any] = None,
-        headers: Dict[str, Any] = None
+        headers: Dict[str, Any] = None,
     ) -> requests.Response:
         """The post method which is just `requests.post` with extra kwargs passed in.
 

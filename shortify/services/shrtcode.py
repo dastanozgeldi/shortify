@@ -26,14 +26,13 @@ class Shortener(ShortifyBase):
         ShorteningError
             If the response status was not around 200 (not ok).
         """
-        print('This API may work slow, please consider waiting!\n')
+        print("This API may work slow, please consider waiting!\n")
 
-        response = self.get(
-            'https://api.shrtco.de/v2/shorten',
-            params={'url': url}
-        )
+        response = self.get("https://api.shrtco.de/v2/shorten", params={"url": url})
         if response.ok:
-            result = response.json()['result']
-            return '\n'.join(result[res] for res in result if res.startswith('full_short_link'))
+            result = response.json()["result"]
+            return "\n".join(
+                result[res] for res in result if res.startswith("full_short_link")
+            )
 
         raise ShorteningError(response.content)

@@ -27,8 +27,7 @@ class Shortener(ShortifyBase):
             If the response status was not around 200 (not ok).
         """
         response = self.get(
-            'https://clck.ru/--',
-            params={'url': self.sanitize_url(url)}
+            "https://clck.ru/--", params={"url": self.sanitize_url(url)}
         )
         if response.ok:
             return response.text.strip()

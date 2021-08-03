@@ -27,8 +27,8 @@ class Shortener(ShortifyBase):
             If the response status was not around 200 (not ok).
         """
         response = self.get(
-            'https://is.gd/create.php',
-            params={'url': self.sanitize_url(url), 'format': 'simple'}
+            "https://is.gd/create.php",
+            params={"url": self.sanitize_url(url), "format": "simple"},
         )
         if response.ok:
             return response.text.strip()

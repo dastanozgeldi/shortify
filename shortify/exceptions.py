@@ -1,5 +1,8 @@
-
-__all__ = ('InvalidURL', 'ShorteningError', 'ExpandingError',)
+__all__ = (
+    "InvalidURL",
+    "ShorteningError",
+    "ExpandingError",
+)
 
 
 class ShortifyError(Exception):
@@ -20,11 +23,15 @@ class ShorteningError(ShortifyError):
     """Raised when the shortening from one service (e.g TinyURL) fails."""
 
     def __init__(self, url: str) -> None:
-        super().__init__(f'Unexpected problem occurred on trying to shorten this URL: {url}')
+        super().__init__(
+            f"Unexpected problem occurred on trying to shorten this URL: {url}"
+        )
 
 
 class ExpandingError(ShortifyError):
     """Raised when the expanding from one service (e.g TinyURL) fails."""
 
     def __init__(self, url: str) -> None:
-        super().__init__(f'Unexpected problem occurred on trying to expand this URL: {url}')
+        super().__init__(
+            f"Unexpected problem occurred on trying to expand this URL: {url}"
+        )

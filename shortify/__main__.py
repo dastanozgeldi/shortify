@@ -8,21 +8,21 @@ def parse_arguments() -> argparse.Namespace:
     Later on we use this feature in `main` function, the core of the CLI.
     """
     choices = (
-        'tinyurl',
-        'git',
-        'shrtcode',
-        'isgd',
-        'clck',
+        "tinyurl",
+        "git",
+        "shrtcode",
+        "isgd",
+        "clck",
     )
     parser = argparse.ArgumentParser(
-        'shortify',
-        usage='shortify <service> <url to shorten>',
-        description='Shortify CLI!',
+        "shortify",
+        usage="shortify <service> <url to shorten>",
+        description="Shortify CLI!",
     )
     parser.add_argument(
-        'service', choices=choices, help='Provide a service you\'d like to use.'
+        "service", choices=choices, help="Provide a service you'd like to use."
     )
-    parser.add_argument('url', help='Pass an URL to shorten.')
+    parser.add_argument("url", help="Pass an URL to shorten.")
 
     return parser.parse_args()
 
@@ -35,10 +35,10 @@ def main() -> None:
     Then we shorenize the URL according to the parsed arguments.
     """
     args = parse_arguments()
-    module = importlib.import_module('shortify.services.' + args.service)
+    module = importlib.import_module("shortify.services." + args.service)
     service = module.Shortener()
     print(service.shorten(args.url))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

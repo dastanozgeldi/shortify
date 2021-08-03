@@ -33,10 +33,9 @@ class Shortener(ShortifyBase):
             If the response status was not around 200 (not ok).
         """
         response = self.post(
-            'https://git.io',
-            data={'url': self.sanitize_url(url), 'code': custom_code}
+            "https://git.io", data={"url": self.sanitize_url(url), "code": custom_code}
         )
-        if not response.ok or not response.headers.get('Location'):
+        if not response.ok or not response.headers.get("Location"):
             raise ShorteningError(response.content)
 
-        return response.headers['Location']
+        return response.headers["Location"]

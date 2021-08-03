@@ -27,8 +27,7 @@ class Shortener(ShortifyBase):
             If the response status was not around 200 (not ok).
         """
         response = self.get(
-            'https://tinyurl.com/api-create.php',
-            params={'url': self.sanitize_url(url)}
+            "https://tinyurl.com/api-create.php", params={"url": self.sanitize_url(url)}
         )
         if response.ok:
             return response.text.strip()

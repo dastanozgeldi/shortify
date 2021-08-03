@@ -9,21 +9,21 @@ you can always use another API.
 import logging
 from typing import Literal, NamedTuple
 
-__title__ = 'shortify'
-__author__ = 'Dositan'
-__license__ = 'MIT'
-__copyright__ = f'Copyright 2021 {__author__}'
-__version__ = '0.5.0a'
+__title__ = "shortify"
+__author__ = "Dositan"
+__license__ = "MIT"
+__copyright__ = f"Copyright 2021 {__author__}"
+__version__ = "0.5.0b"
 
 
 class VersionInfo(NamedTuple):
     major: int
     minor: int
     micro: int
-    releaselevel: Literal['alpha', 'beta', 'candidate', 'final']
+    releaselevel: Literal["alpha", "beta", "candidate", "final"]
     serial: int
 
 
-version_info = VersionInfo(major=0, minor=5, micro=0, releaselevel='alpha', serial=0)
+version_info = VersionInfo(major=0, minor=5, micro=0, releaselevel="beta", serial=0)
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
