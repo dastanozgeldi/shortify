@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "shortify"
+version = "0.5.0a"
+description = "A simple URL-shortening library with CLI support."
+authors = ["Dastan Ozgeldi <ozgdastan@gmail.com>"]
+readme = "README.md"
+license = "MIT License"
+repository = "https://github.com/Dositan/shortify"
+# documentation = "soon"
+keywords = ["url", "shortener", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.8"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "2.26.0"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "4.1.2"
+black = "21.7b0"
+
+[tool.poetry.scripts]
+shortify = 'shortify.__main__:main'
+
+[tool.poetry.urls]
+"Source Code" = "https://github.com/Dositan/shortify"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
