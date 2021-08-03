@@ -1,3 +1,4 @@
+import abc
 import re
 from typing import Any, Dict
 
@@ -15,7 +16,7 @@ URL_REGEX = re.compile(
 )
 
 
-class ShortifyBase:
+class ShortifyBase(abc.ABC):
     """ShortifyBase - the base class for all subclass-shorteners.
 
     There is an idea of making a class per one popular URL-shortening service.
@@ -151,6 +152,7 @@ class ShortifyBase:
             cert=self.cert,
         )
 
+    @abc.abstractmethod
     def shorten(self, url: str) -> str:
         """The key-method that must be overridden by child classes."""
         raise NotImplementedError
@@ -161,7 +163,7 @@ class ShortifyBase:
         Parameters
         ----------
         url : str
-            A URL to shorten.
+            A URL to expand.
 
         Returns
         -------
