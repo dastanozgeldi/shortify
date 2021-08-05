@@ -28,9 +28,10 @@ requests = "2.26.0"
 [tool.poetry.dev-dependencies]
 Sphinx = "4.1.2"
 black = "21.7b0"
+furo = "2021.7.31b41"
 
 [tool.poetry.scripts]
-shortify = "shortify.__main__:main"
+shortify = "shortify.main.cli:main"
 
 [tool.poetry.urls]
 "Source Code" = "https://github.com/Dositan/shortify"
