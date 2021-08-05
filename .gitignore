@@ -8,5 +8,5 @@ build/
 dist/
 *.egg-info/
 
-# Not ready
-docs/
+# Documentation.
+docs/source/_build
