@@ -32,7 +32,8 @@ release = '0.5.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.duration'
+    'sphinx.ext.duration',
+    'furo'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
