@@ -35,7 +35,7 @@ class ShortifyBase(abc.ABC):
     Example
     -------
     >>> class MyShortener(ShortifyBase):
-    ...     def short(self, url: str) -> str:
+    ...     def shorten(self, url: str) -> str:
     ...         # shortener code may differ from the example below,
     ...         # this is API-specific.
     ...         response = self.get(
