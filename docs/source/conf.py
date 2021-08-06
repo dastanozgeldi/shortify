@@ -12,6 +12,9 @@
 #
 import os
 import sys
+
+import shortify
+
 sys.path.insert(0, os.path.abspath('..'))
 
 
@@ -22,7 +25,7 @@ copyright = '2021, Dastan Ozgeldi'
 author = 'Dastan Ozgeldi'
 
 # The full version, including alpha/beta/rc tags
-release = '0.5.0'
+release = shortify.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,8 +35,7 @@ release = '0.5.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.duration',
-    'furo'
+    'sphinx.ext.duration'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
