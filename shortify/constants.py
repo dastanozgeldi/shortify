@@ -4,4 +4,6 @@ SUPPORTED_SERVICES = (
     "shrtcode",
     "isgd",
     "clck",
+    "tinyuid",
+    "cleanuri",
 )

@@ -1,15 +1,25 @@
-<h1 align="center">
-    Shortify - shorten your URL
-</h1>
+<div align="center">
+    <h1>Shortify - shorten your URL.</h1>
+    <p>~ A simple URL-shortening library with CLI support.</p>
+</div>
 
-A simple URL shortening API wrapper library written in Python by Dositan.
+<div align="center">
+    <a href="https://shortify.readthedocs.io/en/latest/">
+        <img src="https://img.shields.io/pypi/dw/shortify.svg"/>
+    </a>
+    <a href="https://shortify.readthedocs.io/en/latest">
+        <img src="https://readthedocs.org/projects/shortify/badge/?version=latest">
+    </a>
+</div>
 
 ## Supported services
 1. [TinyURL](https://tinyurl.com)
 2. [Git.io](https://git.io)
 3. [Shrtco.de](https://shrtco.de)
-4. [Is.gd](is.gd)
-5. [Clck.ru](clck.ru)
+4. [Is.gd](https://is.gd)
+5. [Clck.ru](https://clck.ru)
+6. [TinyUID.com](https://tinyuid.com)
+7. [CleanURI.com](https://cleanuri.com)
 
 -----
 
@@ -21,8 +31,6 @@ $ pip install shortify
 ```
 
 After pressing enter, pip will install all the required packages for the project.
-
-</div>
 
 -----
 
