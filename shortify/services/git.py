@@ -1,7 +1,7 @@
 from typing import Optional
 
-from ..abc import ShortifyBase
-from ..exceptions import ShorteningError
+from shortify.abc import ShortifyBase
+from shortify.exceptions import ShorteningError
 
 
 class Shortener(ShortifyBase):
