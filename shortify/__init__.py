@@ -14,7 +14,7 @@ __title__ = "shortify"
 __author__ = "Dositan"
 __license__ = "MIT"
 __copyright__ = f"Copyright 2021 {__author__}"
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 
 class VersionInfo(NamedTuple):

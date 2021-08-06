@@ -1,13 +1,12 @@
-# Poetry configuration.
 [tool.poetry]
 name = "shortify"
-version = "0.5.0"
+version = "0.6.0"
 description = "A simple URL-shortening library with CLI support."
 authors = ["Dastan Ozgeldi <ozgdastan@gmail.com>"]
 readme = "README.md"
 license = "MIT License"
 repository = "https://github.com/Dositan/shortify"
-# documentation = "soon"
+documentation = "https://shortify.readthedocs.io/en/latest/"
 keywords = ["url", "shortener", "cli"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -33,10 +32,6 @@ furo = "2021.7.31b41"
 [tool.poetry.scripts]
 shortify = "shortify.main.cli:main"
 
-[tool.poetry.urls]
-"Source Code" = "https://github.com/Dositan/shortify"
-
-# Black formatter configuration.
 [tool.black]
 line-length = 88
 target-version = ["py38"]
