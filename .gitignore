@@ -1,7 +1,8 @@
 # Folders
 env/
-.vscode/
 __pycache__/
+.mypy_cache/
+.pytest_cache/
 
 # PyPI
 build/
@@ -9,4 +10,8 @@ dist/
 *.egg-info/
 
 # Documentation.
-docs/source/_build
+docs/build/
+docs/source/_build/
+
+# Learning how to use.
+tests/
