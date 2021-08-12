@@ -23,7 +23,7 @@ class Application:
         Later on we use this feature in `self.run` method.
         """
         self.parser.add_argument(
-            "--version", action="version", version=f"%(prog)s {__version__}"
+            "-v", "--version", action="version", version=f"%(prog)s {__version__}"
         )
         self.parser.add_argument(
             "service",
