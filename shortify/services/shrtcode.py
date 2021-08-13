@@ -1,5 +1,9 @@
+import logging
+
 from shortify.abc import ShortifyBase
 from shortify.exceptions import ShorteningError
+
+log = logging.getLogger("shortify.shrtcode")
 
 
 class Shortener(ShortifyBase):
@@ -26,7 +30,7 @@ class Shortener(ShortifyBase):
         ShorteningError
             If the response status was not around 200 (not ok).
         """
-        print("This API may work slow, please consider waiting!\n")
+        log.warning("This API may work slow, please consider waiting!\n")
 
         response = self.get("https://api.shrtco.de/v2/shorten", params={"url": url})
         if response.ok:
