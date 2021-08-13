@@ -12,6 +12,13 @@
     </a>
 </div>
 
+## Why to use?
+**Simplicity.** Shortify's library is really easy to use and you can keep your code as shorter as you want.
+
+![Usage example](./examples/tinyurl.png)
+
+-----
+
 ## Supported services
 1. [TinyURL](https://tinyurl.com)
 2. [Git.io](https://git.io)
@@ -30,30 +37,6 @@ $ pip install shortify
 ```
 
 After pressing enter, pip will install all the required packages for the project.
-
------
-
-## Library usage
-The library itself is straightforward to use, let's take a look at `shrtco.de` example:
-```python
-# ./main.py
-from shortify.services.shrtcode import Shortener
-
-app = Shortener()
-
-if __name__ == "__main__":
-    result = app.shorten("https://github.com/pallets/click/blob/main/src/click/shell_completion.py#L6-L14")
-    print(result)
-```
-Running the file:
-```console
-$ python main.py
-This API may work slow, please consider waiting!
-
-https://shrtco.de/q5ncKn 
-https://9qr.de/q5ncKn    
-https://shiny.link/q5ncKn
-```
 
 -----
 
