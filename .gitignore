@@ -4,6 +4,9 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 
+# Poetry (package manager)
+poetry.lock
+
 # PyPI
 build/
 dist/
