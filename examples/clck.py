@@ -7,9 +7,9 @@ def main():
     This is the core method that does the user-terminal stuff.
     """
     sh = Shortener()
-    url = sh.shorten('http://www.github.com/Dositan/shortify')
+    url = sh.shorten("http://www.github.com/Dositan/shortify")
     print(url)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
