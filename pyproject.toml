@@ -30,7 +30,7 @@ black = "21.7b0"
 furo = "2021.7.31b41"
 
 [tool.poetry.scripts]
-shortify = "shortify.main.cli:main"
+shortify = "shortify.cli:app"
 
 [tool.black]
 line-length = 88
